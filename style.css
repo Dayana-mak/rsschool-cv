@@ -1,34 +1,335 @@
-@font-face {
-    font-family: Montserrat;
-    src: url("assets\fonts/Montserrat-VariableFont_wght.ttf");
-}
-
-body {
-    font-family: Montserrat, sans-serif;
-    min-height: 100vh;
-    margin: 0; padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.container {
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
-.header {
-    border: 1px solid red;
-}
-
-.main {
-    border: 1px solid red;
-}
-
-.footer {
-    border: 1px solid red;
+/*General Settings*/
+html {
+    scroll-behavior: smooth;
+    background-color: #111111;
 }
 
 * {
     box-sizing: border-box;
 }
+
+body {                                      
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    max-width: 1000px;    /* ограничивает ширину контента и центрирует его на странице по горизонтали*/
+    margin: 0 auto;
+}
+
+.section-title {
+    text-transform: uppercase;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/*End General Settings*/
+
+/*Header Style*/
+
+
+.header-container {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #202026;
+}
+
+.right-side-header {
+    display: flex;
+    justify-content: start;
+    flex-flow: column wrap;
+    width: 70%
+}
+
+.section-profile-title {
+    background-color: #fecb00;
+    width: 100%;
+    height: 45%;
+    margin-top: 15%;
+    padding: 20px 35px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.nav {
+    width: 100%;
+    height: 5%;
+}
+
+.main-photo {
+    height: 100%;
+    width: 30%;
+    
+}
+
+
+.nav-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    background-color: #fecb00;
+    bottom: 0;
+    margin: 0;
+}
+
+.nav-link {
+    padding: 0;
+    margin: 10px;
+    line-height: 2.5;
+    font-size: 100%;
+    color: #2d2d2d;
+    text-decoration: none;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-link::after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2.5px;
+    background-color: #2d2d2d;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+
+/*End Header Style*/
+ /*Main Style*/
+ @media (max-width: 768px) {  /*при уменьшении ширины экрана до 768px, секция будет занимать всю ширину*/
+    .section {
+      width: 100%; 
+    }
+}
+
+.contacts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.languages-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+}
+
+.section {
+    flex: 1;
+}
+
+.left-column {
+    display: flex;
+    width: 30%;
+    padding: 20px;
+    flex-direction: column;
+    background-color: #202026;
+    color: #ffffff;
+}
+
+.right-column {
+    display: flex;
+    width: 70%;
+    padding: 3% 5%;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.left-column h2 {
+    padding-left: 25px;
+    position: relative;
+}
+
+.left-column h2:after {
+    content: "";
+    background-color: #fecb00;
+    height: 2px;
+    width: 98%;
+    left: 10%;
+    bottom: -30%;
+    position: absolute;
+}
+
+.right-column h2 {
+    position: relative;
+}
+
+.right-column h2:after {
+    content: "";
+    background-color: #202026;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: -30%;
+    position: absolute;
+}
+
+pre {
+    font-family: monospace, monospace;
+    background-color: #202026;
+    color: #fff;
+}
+.contact-link {
+    color: #fecb00;
+}
+
+.section-item {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    padding-left: 25px;
+}
+
+.section-item.skill-item {
+   padding-left: 35px;
+}
+
+.contact-item:nth-child(1):before {
+    background-image: url(./assets/img/location.png);
+}
+
+.contact-item:nth-child(2):before {
+    background-image: url(./assets/img/mail.png);
+}
+.contact-item:nth-child(3):before {
+    background-image: url(./assets/img/telegram.png);
+}
+
+.contact-item:nth-child(4):before {
+    background-image: url(./assets/img/github.png);
+}
+
+.contact-item:before {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+}
+
+.skill-item:before {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: -4px;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+}
+
+.language-item:before {
+    content: "";
+    position: absolute;
+    border: 1px solid #ffffff;
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.skill-item:nth-child(1):before {
+    background-image: url(./assets/img/html5.png);
+}
+.skill-item:nth-child(2):before {
+    background-image: url(./assets/img/css3.png);
+}
+.skill-item:nth-child(3):before {
+    background-image: url(./assets/img/javascript.png);
+}
+.skill-item:nth-child(4):before {
+    background-image: url(./assets/img/github2.png);
+}
+.skill-item:nth-child(5):before {
+    background-image: url(./assets/img/python.png);
+}
+/*End Main Style*/
+
+/*Footer Style*/
+.footer-container {
+    background: #fecb00;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 50px;;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.rss {
+    background-image: url(./assets/img/rs_school.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 40px;
+    margin-right: 10px;
+    top: 5px;
+    position: relative;
+    top: 4px;
+}
+
+.footer-github-link {
+    color: #2d2d2d;
+    position: relative;
+    padding-left: 25px;
+}
+
+.footer-container:before {
+    content: "";
+    background-image: url(./assets/img/github2.png);
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/*End Footer Style*/
+
+
+
+
+
+
+
